@@ -1,6 +1,7 @@
 const allowedOrigins = [
     
-   'https://instagram-clone-q39b.onrender.com'
+   'https://instagram-clone-q39b.onrender.com',
+    'http://localhost:3000'
 ]
 
 
