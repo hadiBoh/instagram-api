@@ -1,6 +1,6 @@
 const allowedOrigins = [
     
-   'https://instagram-clone-q39b.onrender.com'
+   'https://instagram-clone-q39b.onrender.com/'
 ]
 
 
