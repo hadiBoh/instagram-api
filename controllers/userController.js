@@ -40,14 +40,15 @@ const getAllUsers = async (req , res)=>{
 const updateUser = async (req , res)=>{
     const {userId} = req?.body
     const route = req?.file.path
-    const user = await User.findById(userId).exec()
+
+    
+    try {
+            const user = await User.findById(userId).exec()
     
     const newRoute = route?.replace("images" , "images/")
     const entries = {
         img:newRoute?.replace("profile" , "profile/")
     } 
-    
-    try {
         user.profile = entries.img
         await user.save()
         return res.json({message:"updated!"})
@@ -60,12 +61,13 @@ const updateUser = async (req , res)=>{
 const updateUserBio = async (req , res)=>{
     
     const {userId , bio} = req.body
-    const user = await User.findById(userId).exec()
+
+    
+    try {
+            const user = await User.findById(userId).exec()
     const entries = {
         bio
     } 
-    
-    try {
         user.bio = entries.bio
         await user.save()
         return res.json({message:"updated!"})
