@@ -46,8 +46,9 @@ const updateUser = async (req , res)=>{
     const entries = {
         img:newRoute?.replace("profile" , "profile/")
     } 
-    user.profile = entries.img
+    
     try {
+        user.profile = entries.img
         await user.save()
         return res.json({message:"updated!"})
     } catch (error) {
@@ -63,8 +64,9 @@ const updateUserBio = async (req , res)=>{
     const entries = {
         bio
     } 
-    user.bio = entries.bio
+    
     try {
+        user.bio = entries.bio
         await user.save()
         return res.json({message:"updated!"})
     } catch (error) {
